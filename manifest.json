@@ -1,28 +1,22 @@
 {
   "name": "Remove Crunchyroll simulcast calendar dubs",
-  "version": "1.0",
-  "manifest_version": 2,
+  "version": "2.0",
+  "manifest_version": 3,
   "description": "Removes the dub titles from the Crunchyroll simulcast calendar.",
-  "homepage_url": "https://github.com/Malpp/remove_dubs",
+  "homepage_url": "https://github.com/gustavofucilini/remove_dubs_for_ptbr_lanyout",
   "icons": {
     "16": "icons/16.png",
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
-  "permissions": [
-    "https://www.crunchyroll.com/simulcastcalendar*",
-    "https://www.crunchyroll.com/*/simulcastcalendar*"
-  ],
   "content_scripts": [
     {
       "matches": [
         "https://www.crunchyroll.com/simulcastcalendar*",
         "https://www.crunchyroll.com/*/simulcastcalendar*"
       ],
-      "js": [
-        "src/remove_dubs.js",
-        "js/jquery/jquery.min.js"
-      ]
+      "js": ["src/remove_dubs.js"],
+      "run_at": "document_idle"
     }
   ]
 }
